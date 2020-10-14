@@ -1,6 +1,6 @@
 var inquirer = require("inquirer");
 var fs = require("fs");
-
+var generateMarkdown = require("./utils/generateMarkdown.js");
 
 
 
@@ -51,41 +51,31 @@ const questions = [
         type: "input",
         message: "Enter your email",
         name: "Questions2"
-      },
+      }
 ];
+
 inquirer.prompt(questions).then(function(userAnswers) {
-    console.log(userAnswers);
-
-   /* const { Title,
-            Description,
-            Installation_Instructions,
-            Usage_Info,
-            Contributing,
-            Testing,
-            License,
-            Questions,
-            Questions2
-         }; */
-
-   writeToFile(userAnswers.Title, userAnswers.Description, userAnswers.Installation_Instructions, userAnswers.Usage_Info, userAnswers.Contributing, userAnswers.Testing, userAnswers.License, userAnswers.Questions, userAnswers.Questions2);
+   console.log(userAnswers);
+   generateMarkdown(userAnswers);
+  //  writeToFile(userAnswers.Title, userAnswers.Description, userAnswers.Installation_Instructions, userAnswers.Usage_Info, userAnswers.Contributing, userAnswers.Testing, userAnswers.License, userAnswers.Questions, userAnswers.Questions2);
 });
 
 
 
 // function to write README file
-function writeToFile(Title, Description, Installation_Instructions, Usage_Info, Contributing, Testing, Questions, Questions2){
+function writeToFile(userAnswers){
 
 
-  fs.appendFile("READ_ME.md",Title + "\n", function (err) {
-      console.log(err);
-  });
- // fs.appendFile("READ_ME.md",Description + "\n");
-  //fs.appendFile("READ_ME.md",Installation_Instructions + "\n");
-  //fs.appendFile("READ_ME.md",Usage_Info + "\n");
- // fs.appendFile("READ_ME.md", Contributing + "\n");
-  //fs.appendFile("READ_ME.md",Testing + "\n");
-  //fs.appendFile("READ_ME.md",Questions + "\n");
-  //fs.appendFile("READ_ME.md",Questions2 + "\n");
+  fs.appendFile("cREADME.md", userAnswers, err => console.log(err));
+
+
+  // fs.appendFile("cREADME.md",Description + "\n", err => console.log(err));
+  // fs.appendFile("cREADME.md",Installation_Instructions + "\n", err => console.log(err));
+  // fs.appendFile("cREADME.md",Usage_Info + "\n", err => console.log(err));
+  // fs.appendFile("cREADME.md", Contributing + "\n", err => console.log(err));
+  // fs.appendFile("cREADME.md",Testing + "\n", err => console.log(err));
+  // fs.appendFile("cREADME.md",Questions + "\n", err => console.log(err));
+  // fs.appendFile("cREADME.md",Questions2 + "\n", err => console.log(err));
 
 };
 
