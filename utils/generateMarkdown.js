@@ -1,17 +1,23 @@
 // function to generate markdown for README
-function generateMarkdown(userAnswers) {
+function generateMarkdown(userAnswers, badge) {
 
-  return `#${userAnswers.Title}`;
-  return `##Description: ${userAnswers.Description}`;
-  return `##Instalation Instructions: ${userAnswers.Installation_Instructions}`;
-  return `##Usage Info: ${userAnswers.Usage_Info}`;
-  return `##Contribution Guidelines: ${userAnswers.Contributing}`;
-  return `##Tests: ${userAnswers.Testing}`;
-  return `##Questions?: Contact me: 
-  GitHub: ${userAnswers.Questions}
-  Email: ${userAnswers.Questions2}`;
+  return `# ${userAnswers.Title} \n` +
+  `${badge} \n` +
+  `## Description: \n` + 
+  `${userAnswers.Description} \n` +
+  `## Instalation Instructions: \n` +
+  `${userAnswers.Installation_Instructions} \n`+
+  `## Usage Info: \n` +
+  `${userAnswers.Usage_Info} \n`+  
+  `## Contribution Guidelines: \n` +
+  `${userAnswers.Contributing} \n` + 
+  `## Tests: \n` +
+  `${userAnswers.Testing} \n`+  
+  `## Questions? \n` +
+  `Contact me:\n`+  
+  `GitHub: ${userAnswers.Questions} \n`+ 
+  `Email: ${userAnswers.Questions2}\n`;
 
-  writeToFile(userAnswers);
 };
 
 module.exports = generateMarkdown;

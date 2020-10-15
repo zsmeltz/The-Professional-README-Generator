@@ -1,6 +1,7 @@
 var inquirer = require("inquirer");
 var fs = require("fs");
 var generateMarkdown = require("./utils/generateMarkdown.js");
+//const Choices = require("inquirer/lib/objects/choices");
 
 
 
@@ -14,7 +15,7 @@ const questions = [
       {
         type: "input",
         message: "Write a description about your application",
-        name: "Desciption"
+        name: "Description"
       },
       {
         type: "input",
@@ -33,13 +34,13 @@ const questions = [
       },
       {
         type: "input",
-        message: "Give some instructions on how to test this application",
+        message: "What kind of tests has this application been through?",
         name: "Testing"
       },
       {
         type: "list",
         message: "If you would like to choose a license for the project, choose one of these: ",
-        choices: ["Mozilla Public 2.0", "Apache 2.0", "MIT", "Boost Software 1.0", "The Unlicense", "I don't want a license"],
+        choices: ["Mozilla Public 2.0", "Apache 2.0", "MIT", "Boost Software 1.0", "I don't want a license"],
         name: "License"
       },
       {
@@ -56,28 +57,37 @@ const questions = [
 
 inquirer.prompt(questions).then(function(userAnswers) {
    console.log(userAnswers);
-   generateMarkdown(userAnswers);
-  //  writeToFile(userAnswers.Title, userAnswers.Description, userAnswers.Installation_Instructions, userAnswers.Usage_Info, userAnswers.Contributing, userAnswers.Testing, userAnswers.License, userAnswers.Questions, userAnswers.Questions2);
-});
+  
+   getBadge(userAnswers);
 
+   fs.appendFile("cREADME.md",generateMarkdown(userAnswers), err => console.log(err));
 
+  });
 
-// function to write README file
-function writeToFile(userAnswers){
-
-
-  fs.appendFile("cREADME.md", userAnswers, err => console.log(err));
-
-
-  // fs.appendFile("cREADME.md",Description + "\n", err => console.log(err));
-  // fs.appendFile("cREADME.md",Installation_Instructions + "\n", err => console.log(err));
-  // fs.appendFile("cREADME.md",Usage_Info + "\n", err => console.log(err));
-  // fs.appendFile("cREADME.md", Contributing + "\n", err => console.log(err));
-  // fs.appendFile("cREADME.md",Testing + "\n", err => console.log(err));
-  // fs.appendFile("cREADME.md",Questions + "\n", err => console.log(err));
-  // fs.appendFile("cREADME.md",Questions2 + "\n", err => console.log(err));
-
-};
+ function getBadge (userAnswers) {
+    if(userAnswers.License === questions[6].choices[0]){
+      var badge = `[![Generic badge](https://img.shields.io/badge/license-Mozilla%20Pub%202.0-green.svg)](https://shields.io/)`;
+      generateMarkdown(badge);
+    }
+    if(userAnswers.License === questions[6].choices[1]){
+      var badge = `[![Generic badge](https://img.shields.io/badge/license-Apache%202.0-green.svg)](https://shields.io/)`;
+      generateMarkdown(badge);
+    }
+    if(userAnswers.License === questions[6].choices[2]){
+      var badge = `[![Generic badge](https://img.shields.io/badge/license-MIT-green.svg)](https://shields.io/)`;
+      generateMarkdown(badge);
+    }
+    if(userAnswers.License === questions[6].choices[3]){
+      var badge = `[![Generic badge](https://img.shields.io/badge/license-Boost%20Software%201.0-green.svg)](https://shields.io/)`;
+      generateMarkdown(badge);
+    }
+    if(userAnswers.License === questions[6].choices[4]){
+      var badge = null;
+      generateMarkdown(badge);
+    }
+    
+    
+ };
 
 
 // function to initialize program
