@@ -5,11 +5,11 @@
 This application will take your answers in the terminal and generate a README file from them. This includes a title, description, table of contents, installation process, usage, how to contribute, testing, and question sections and will append your answers to their coordinating sections. I really hope you can enjoy this app and use it to your advantage! You can use it for your business, work, testing, and personal use! 
 
 ### Table of Contents: 
-1.[Installation Instructions](##installation-instructions)
-  2.[Usage Info](##usage-info)
-  3.[Contribution Guidelines](##contribution-guidelines)
-  4.[Tests](##tests)
-  5.[Questions](##questions?)
+1.[Installation Instructions](##installation-instructions)\n
+2.[Usage Info](##usage-info)\n
+3.[Contribution Guidelines](##contribution-guidelines)\n
+4.[Tests](##tests)\n
+5.[Questions](##questions?)
   
 
 ## Instalation Instructions: 
@@ -27,4 +27,4 @@ This project has only been degubbed by me.
 ## Questions? 
 Contact me:
 GitHub: [zsmeltz](https://github.com/zsmeltz) 
-Email: johndoe13@gmail.com
+
