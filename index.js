@@ -58,36 +58,35 @@ const questions = [
 inquirer.prompt(questions).then(function(userAnswers) {
    console.log(userAnswers);
   
-   getBadge(userAnswers);
-
-   fs.appendFile("cREADME.md",generateMarkdown(userAnswers), err => console.log(err));
+   if(userAnswers.License === "Mozilla Public 2.0"){
+    var badge = "[![Generic badge](https://img.shields.io/badge/license-Mozilla%20Pub%202.0-green.svg)](https://shields.io/)";
+    console.log(badge);
+    generateMarkdown(badge);
+  };
+  if(userAnswers.License === "Apache 2.0"){
+    var badge = "[![Generic badge](https://img.shields.io/badge/license-Apache%202.0-green.svg)](https://shields.io/)";
+    console.log(badge);
+    generateMarkdown(badge);
+  };
+  if(userAnswers.License === "MIT"){
+    var badge = "[![Generic badge](https://img.shields.io/badge/license-MIT-green.svg)](https://shields.io/)";
+    console.log(badge);
+    generateMarkdown(badge);
+  };
+  if(userAnswers.License === "Boost Software 1.0"){
+    var badge = "[![Generic badge](https://img.shields.io/badge/license-Boost%20Software%201.0-green.svg)](https://shields.io/)";
+    console.log(badge);
+    generateMarkdown(badge);
+  };
+  if(userAnswers.License === "I don't want a license"){
+    var badge = null;
+    console.log(badge);
+    generateMarkdown(badge);
+  };
+  
+   fs.appendFile("cREADME.md",generateMarkdown(userAnswers, badge), err => console.log(err));
 
   });
-
- function getBadge (userAnswers) {
-    if(userAnswers.License === questions[6].choices[0]){
-      var badge = `[![Generic badge](https://img.shields.io/badge/license-Mozilla%20Pub%202.0-green.svg)](https://shields.io/)`;
-      generateMarkdown(badge);
-    }
-    if(userAnswers.License === questions[6].choices[1]){
-      var badge = `[![Generic badge](https://img.shields.io/badge/license-Apache%202.0-green.svg)](https://shields.io/)`;
-      generateMarkdown(badge);
-    }
-    if(userAnswers.License === questions[6].choices[2]){
-      var badge = `[![Generic badge](https://img.shields.io/badge/license-MIT-green.svg)](https://shields.io/)`;
-      generateMarkdown(badge);
-    }
-    if(userAnswers.License === questions[6].choices[3]){
-      var badge = `[![Generic badge](https://img.shields.io/badge/license-Boost%20Software%201.0-green.svg)](https://shields.io/)`;
-      generateMarkdown(badge);
-    }
-    if(userAnswers.License === questions[6].choices[4]){
-      var badge = null;
-      generateMarkdown(badge);
-    }
-    
-    
- };
 
 
 // function to initialize program
