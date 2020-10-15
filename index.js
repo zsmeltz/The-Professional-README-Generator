@@ -1,11 +1,7 @@
 var inquirer = require("inquirer");
 var fs = require("fs");
 var generateMarkdown = require("./utils/generateMarkdown.js");
-//const Choices = require("inquirer/lib/objects/choices");
 
-
-
-// array of questions for user
 const questions = [
       {
         type: "input",
@@ -45,7 +41,7 @@ const questions = [
       },
       {
         type: "input",
-        message: "If users want to reach out about to you about this app, you might want to give them a way to. Enter your GitHub username",
+        message: "If users want to reach out to you about this app, you might want to give them a way to. Enter your GitHub username",
         name: "Questions"
       },
       {
@@ -56,43 +52,37 @@ const questions = [
 ];
 
 inquirer.prompt(questions).then(function(userAnswers) {
-   console.log(userAnswers);
   
    if(userAnswers.License === "Mozilla Public 2.0"){
     var badge = "[![Generic badge](https://img.shields.io/badge/license-Mozilla%20Pub%202.0-green.svg)](https://shields.io/)";
-    console.log(badge);
     generateMarkdown(badge);
   };
   if(userAnswers.License === "Apache 2.0"){
     var badge = "[![Generic badge](https://img.shields.io/badge/license-Apache%202.0-green.svg)](https://shields.io/)";
-    console.log(badge);
     generateMarkdown(badge);
   };
   if(userAnswers.License === "MIT"){
     var badge = "[![Generic badge](https://img.shields.io/badge/license-MIT-green.svg)](https://shields.io/)";
-    console.log(badge);
     generateMarkdown(badge);
   };
   if(userAnswers.License === "Boost Software 1.0"){
     var badge = "[![Generic badge](https://img.shields.io/badge/license-Boost%20Software%201.0-green.svg)](https://shields.io/)";
-    console.log(badge);
     generateMarkdown(badge);
   };
   if(userAnswers.License === "I don't want a license"){
-    var badge = null;
-    console.log(badge);
+    var badge = "";
     generateMarkdown(badge);
   };
-  
+
+  console.log("Generating your cREADME.md...");
+
    fs.appendFile("cREADME.md",generateMarkdown(userAnswers, badge), err => console.log(err));
 
+   init();
+   
   });
 
-
-// function to initialize program
-function init() {
-
+function init(){
+  console.clear();
 }
 
-// function call to initialize program
-init();

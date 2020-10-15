@@ -1,4 +1,4 @@
-// function to generate markdown for README
+
 function generateMarkdown(userAnswers, badge) {
 
   return `# ${userAnswers.Title} \n` +
@@ -7,7 +7,7 @@ function generateMarkdown(userAnswers, badge) {
   `## Description: \n` + 
   `${userAnswers.Description} \n` +
   `\n` +
-  `###Table of Contents: \n`
+  `### Table of Contents: \n` +
   `1.[Installation Instructions](##installation-instructions)
   2.[Usage Info](##usage-info)
   3.[Contribution Guidelines](##contribution-guidelines)
