@@ -8,7 +8,7 @@ This application will take your answers in the terminal and generate a README fi
 1.[Installation Instructions](#installation-instructions)
 2.[Usage Info](#usage-info)
 3.[Contribution Guidelines](#contribution-guidelines)
-4.[Tests](##tests)
+4.[Tests](#tests)
 5.[Questions](#questions?)
   
 
