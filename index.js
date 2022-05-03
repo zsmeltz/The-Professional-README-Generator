@@ -83,6 +83,6 @@ inquirer.prompt(questions).then(function (userAnswers) {
 });
 
 function init() {
-  console.clear();
+  console.log(('<' + '^' + '>' + `\n`).repeat('20'));
 }
 
