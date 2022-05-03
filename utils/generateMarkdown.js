@@ -8,7 +8,7 @@ function generateMarkdown(userAnswers, badge) {
   `${userAnswers.Description} \n` +
   `\n` +
   `### Table of Contents: \n` +
-  `1.[Installation Instructions](#instalation-instructions) \n
+  `1.[Installation Instructions](#installation-instructions) \n
   2.[Usage Info](#usage-info) \n
   3.[Contribution Guidelines](#contribution-guidelines) \n
   4.[Tests](#tests) \n
@@ -28,7 +28,7 @@ function generateMarkdown(userAnswers, badge) {
   `${userAnswers.Testing} \n`+ 
   `\n` +
   `## Questions? \n` +
-  `Contact me:\n`+  
+  `Contact:\n`+  
   `GitHub: [${userAnswers.Questions}](https://github.com/${userAnswers.Questions}) \n`+ 
   `Email: ${userAnswers.Questions2}\n`;
 

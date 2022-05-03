@@ -79,10 +79,10 @@ inquirer.prompt(questions).then(function (userAnswers) {
 
   init();
 
+  console.log("______Your new cReadme file has been generated and is ready to view in this directory_______");
 });
 
 function init() {
   console.clear();
-  console.log("Done :)");
 }
 

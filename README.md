@@ -16,13 +16,13 @@ This application will take your answers in the terminal and generate a README fi
 To install this app all you need to do is clone it by copying the HTTP url and putting it into your terminal when using “git clone”.  
 
 ## Usage Info: 
-To use this app all you need to do is open up ‘index.js’ in an integrated terminal, type ‘node index.js’ in the terminal, and answer the prompted questions. Once that is done, it will add a “cREADME.md” file to your folder. 
+To use this app all you need to do is open up ‘index.js’ in an integrated terminal, type ‘npm start’ or 'node index.js' in the terminal, and answer the prompted questions. Once that is done, it will add a “cREADME.md” file to your folder. 
 
 ## Contribution Guidelines: 
 Fork the repo by clicking the “fork” button at the top of this page. Clone the repository (see installation instructions). Create a branch of your own for your specific repo of the project. Commit, push, and submit your changes for review on GitHub. 
 
 ## Tests: 
-This project has only been degubbed by me. 
+This project has only been debugged by me. 
 
 ## Questions? 
 Contact me:
