@@ -8,11 +8,11 @@ function generateMarkdown(userAnswers, badge) {
   `${userAnswers.Description} \n` +
   `\n` +
   `### Table of Contents: \n` +
-  `1.[Installation Instructions](#installation-instructions) \n
-  2.[Usage Info](#usage-info) \n
-  3.[Contribution Guidelines](#contribution-guidelines) \n
-  4.[Tests](#tests) \n
-  5.[Questions](#questions?)
+  `1.[Installation Instructions](#installation-instructions)\n` +
+  `2.[Usage Info](#usage-info) \n` +
+  `3.[Contribution Guidelines](#contribution-guidelines) \n` +
+  `4.[Tests](#tests) \n` +
+  `5.[Questions](#questions?)
   \n` +
   `\n` +
   `## Installation Instructions: \n` +
